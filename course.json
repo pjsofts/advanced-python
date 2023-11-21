@@ -1,4 +1,5 @@
 {
+  
   "author": {
     "name": "Pouria Jahandideh",
     "company": "Ebona AI"
@@ -12,7 +13,7 @@
     "twitter": "pjsofts"
   },
 
-  
+
   "description": "A starter kit for making really amazing courses, optimized for Frontend Masters",
   "keywords": ["your", "Google", "keywords", "here"],
   "productionBaseUrl": "/advanced-python",
