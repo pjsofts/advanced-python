@@ -1,0 +1,15 @@
+order,sectionTitle,lessonTitle,slug,sectionIcon,filePath,description
+011,Generators,Generators,Generators/Generators,info-circle,/lessons/Generators/Generators,Introduction to Generators
+012,Generators,Generators Exercises,Generators/Generators-Exercises,info-circle,/lessons/Generators/Generators-Exercises,Generators Exercises
+0201,Patterns,Patterns,Patterns/Patterns-Introduction,dumpster-fire,/lessons/Patterns/Patterns-Introduction,Introduction to Patterns
+0202,Patterns,Patterns Implementation,Patterns/Patterns-Implementation,dumpster-fire,/lessons/Patterns/Patterns-Implementation,Patterns Implementation
+0301,AsyncIO,Async IO,AsyncIO/Introduction,info-circle,/lessons/AsyncIO/Introduction,Async IO
+0401,Fast API,FAST API,Fast API/FastAPI,info-circle,/lessons/Fast API/FastAPI,FAST API Introduction
+0501,Flask,Flask Structure,Flask/Flask-Structure,info-circle,/lessons/Flask/Flask-Structure,Flask Structure
+0502,Flask,Flask Application,Flask/Flask-Application,info-circle,/lessons/Flask/Flask-Application,Flask Application
+0601,Object Oriented Programming,Object Oriented Programming,Object-Oriented-Programming/OOP1,info-circle,/lessons/Object-Oriented-Programming/OOP1,Object Oriented Programming
+0602,Object Oriented Programming,Object Oriented Programming-2,Object-Oriented-Programming/OOP2,info-circle,/lessons/Object-Oriented-Programming/OOP2,Object Oriented Programming-2
+0701,Concurrency,Futures,Concurrency/Futures,info-circle,/lessons/Concurrency/Futures,Futures
+0702,Concurrency,Multithreading 1,Concurrency/Multithreading1,info-circle,/lessons/Concurrency/Multithreading1,Multithreading 1
+0703,Concurrency,Multithreading 2,Concurrency/Multithreading2,info-circle,/lessons/Concurrency/Multithreading2,Multithreading 2
+0704,Concurrency,Multiprocessing,Concurrency/Multiprocessing,info-circle,/lessons/Concurrency/Multiprocessing,Multiprocessing

@@ -1,0 +1,79 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><link rel="apple-touch-icon" sizes="180x180" href="/advanced-python/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/advanced-python/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/advanced-python/images/favicon-16x16.png"/><link rel="icon" type="image/png" sizes="16x16" href="/advanced-python/images/favicon-16x16.png"/><link rel="icon" type="image/x-icon" href="/advanced-python/images/favicon.ico"/><title>Patterns Implementation – Advanced Python</title><meta name="description" content="Patterns Implementation"/><meta name="keywords" content="your,Google,keywords,here"/><meta name="og:description" content="Patterns Implementation"/><meta name="og:title" content="Patterns Implementation – Advanced Python"/><meta name="og:image" content="/advanced-python/images/social-share-cover.jpg"/><meta name="twitter:card" content="summary_large_image"/><meta name="next-head-count" content="14"/><link data-next-font="size-adjust" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/advanced-python/_next/static/css/abd5d72f1a23c91b.css" as="style"/><link rel="stylesheet" href="/advanced-python/_next/static/css/abd5d72f1a23c91b.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/advanced-python/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/advanced-python/_next/static/chunks/webpack-43a960f752c780d8.js" defer=""></script><script src="/advanced-python/_next/static/chunks/framework-305cb810cde7afac.js" defer=""></script><script src="/advanced-python/_next/static/chunks/main-027b72302bea74e9.js" defer=""></script><script src="/advanced-python/_next/static/chunks/pages/_app-e1a3a0d5329ef7d1.js" defer=""></script><script src="/advanced-python/_next/static/chunks/pages/lessons/%5Bsection%5D/%5Bslug%5D-40e8b8a7fdfcf2e8.js" defer=""></script><script src="/advanced-python/_next/static/IaFelCunvDjZfaNDKtCIl/_buildManifest.js" defer=""></script><script src="/advanced-python/_next/static/IaFelCunvDjZfaNDKtCIl/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="remix-app"><header class="navbar"><h1 class="navbar-brand"><a href="/advanced-python">Advanced Python</a></h1><div class="navbar-info"><a href="https://laitec.ir/" class="cta-btn">Register in Laitec</a></div></header><div class="content-container"><div class="main"><div class="lesson-container"><div class="lesson"><div class="lesson-content"><h3 id="1-singleton-pattern">1. Singleton Pattern:</h3>
+<pre><code class="language-python">class Singleton:
+    _instance = None
+
+    def __new__(cls):
+        if not cls._instance:
+            cls._instance = super(Singleton, cls).__new__(cls)
+        return cls._instance
+
+# Usage
+singleton_instance_1 = Singleton()
+singleton_instance_2 = Singleton()
+
+print(singleton_instance_1 is singleton_instance_2)  # Output: True (Both variables reference the same instance)
+</code></pre>
+<h3 id="2-factory-method-pattern">2. Factory Method Pattern:</h3>
+<pre><code class="language-python">from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        return &quot;Woof&quot;
+
+class Cat(Animal):
+    def sound(self):
+        return &quot;Meow&quot;
+
+class AnimalFactory:
+    def create_animal(self, animal_type):
+        if animal_type == &#39;dog&#39;:
+            return Dog()
+        elif animal_type == &#39;cat&#39;:
+            return Cat()
+        else:
+            raise ValueError(&quot;Invalid animal type&quot;)
+
+# Usage
+factory = AnimalFactory()
+dog = factory.create_animal(&#39;dog&#39;)
+cat = factory.create_animal(&#39;cat&#39;)
+
+print(dog.sound())  # Output: Woof
+print(cat.sound())  # Output: Meow
+</code></pre>
+<h3 id="3-observer-pattern">3. Observer Pattern:</h3>
+<pre><code class="language-python">class Subject:
+    def __init__(self):
+        self._observers = []
+
+    def attach(self, observer):
+        self._observers.append(observer)
+
+    def detach(self, observer):
+        self._observers.remove(observer)
+
+    def notify(self, value):
+        for observer in self._observers:
+            observer.update(value)
+
+class Observer:
+    def update(self, value):
+        print(f&quot;Received value: {value}&quot;)
+
+# Usage
+subject = Subject()
+observer1 = Observer()
+observer2 = Observer()
+
+subject.attach(observer1)
+subject.attach(observer2)
+
+subject.notify(&quot;Hello Observers!&quot;)
+</code></pre>
+<p>These examples provide a basic understanding and implementation of some design patterns in Python. The implementations may vary based on specific requirements and contexts. Additionally, Python&#39;s dynamic nature allows for different ways to implement these patterns based on the problem at hand.</p>
+</div><div class="lesson-links"><a href="/advanced-python/lessons/Patterns/Patterns-Introduction" class="prev">← Previous</a><a href="/advanced-python/lessons/AsyncIO/Introduction" class="next">Next →</a></div></div><div class="details-bg"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="154" height="154" viewBox="0 0 154 154"><defs><clipPath id="clip-path"><rect id="Rectangle_2238" data-name="Rectangle 2238" width="154" height="154" transform="translate(9467 350)" fill="#fff" stroke="#707070" stroke-width="1"></rect></clipPath><clipPath id="clip-corner-image-active"><rect width="154" height="154"></rect></clipPath></defs><g id="corner-image-active" clip-path="url(#clip-corner-image-active)"><g id="Corner-image-active-2" data-name="Corner-image-active" transform="translate(-9467 -350)" clip-path="url(#clip-path)"><path id="Subtraction_34" data-name="Subtraction 34" d="M-3857.365,1740.766h0l-7.07-7.07,12.89-12.89v14.142l-5.818,5.818Zm-14.142-14.142h0l-7.071-7.07,27.033-27.033v14.143l-19.96,19.96Zm-14.143-14.143h0l-7.07-7.069,41.175-41.175v14.142Zm-14.142-14.142h0l-7.07-7.069,55.317-55.317v14.142Zm-14.142-14.142h0l-7.07-7.069,69.459-69.459v14.142Zm-14.142-14.142h0l-7.07-7.069,76.739-76.739h6.862v7.28Zm-14.143-14.143h0l-7.07-7.069,62.6-62.6h14.142Zm-14.142-14.142h0l-7.07-7.069,48.454-48.454h14.142Zm-14.142-14.142h0l-7.07-7.069,34.312-34.312h14.142Zm-14.142-14.142h0l-7.07-7.069,20.17-20.17h14.142Zm-14.142-14.142h0l-7.071-7.071,6.027-6.027h14.144l-13.1,13.1Zm367.24-56.114v-.909l.455.455-.453.453Z" transform="translate(13472.546 -1236.766)" fill="var(--corner-fill)"></path></g></g></svg></div></div></div></div><footer class="footer"><ul class="socials"><li class="social"><a href="https://github.com/pjsofts"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><defs><clipPath id="clip-github-social"><rect width="32" height="32"></rect></clipPath></defs><g id="github-social" clip-path="url(#clip-github-social)"><g id="Group_272" data-name="Group 272" transform="translate(13522.5 -6994)"><path id="Subtraction_33" data-name="Subtraction 33" d="M-24967.5,8041a15.9,15.9,0,0,1-11.312-4.688A15.893,15.893,0,0,1-24983.5,8025a15.893,15.893,0,0,1,4.689-11.315A15.894,15.894,0,0,1-24967.5,8009a15.894,15.894,0,0,1,11.313,4.686A15.893,15.893,0,0,1-24951.5,8025a15.893,15.893,0,0,1-4.689,11.313A15.9,15.9,0,0,1-24967.5,8041Zm-3.781-4.571h0v3.918h7.895v-6.665a1.836,1.836,0,0,0-1.2-1.718c5.1-.617,7.467-2.975,7.467-7.424a7.176,7.176,0,0,0-1.637-4.728,6.74,6.74,0,0,0,.275-1.812,4.34,4.34,0,0,0-.52-2.452.574.574,0,0,0-.359-.1c-1.061,0-3.465,1.411-3.936,1.694a16.644,16.644,0,0,0-4.2-.489,16.379,16.379,0,0,0-3.969.445c-.846-.5-2.91-1.649-3.859-1.649a.566.566,0,0,0-.354.095,4.3,4.3,0,0,0-.521,2.452,6.7,6.7,0,0,0,.244,1.718,7.346,7.346,0,0,0-1.6,4.822,7.263,7.263,0,0,0,1.533,4.985c1.193,1.359,3.115,2.165,5.871,2.464a1.826,1.826,0,0,0-1.129,1.693v.5h0l-.006,0a7.121,7.121,0,0,1-2.033.363,2.608,2.608,0,0,1-.965-.158,4.438,4.438,0,0,1-1.836-1.881,2.361,2.361,0,0,0-1.248-1.091,3.472,3.472,0,0,0-1.217-.3.584.584,0,0,0-.545.224.282.282,0,0,0,.027.367,1.875,1.875,0,0,0,.447.307,4.732,4.732,0,0,1,.561.355,10.726,10.726,0,0,1,1.682,2.755c.043.092.078.163.105.217a3.876,3.876,0,0,0,2.42,1.185,6.036,6.036,0,0,0,.607.025c.875,0,1.988-.124,2-.125Z" transform="translate(11461 -1015)" fill="var(--footer-icons)"></path><g id="Ellipse_670" data-name="Ellipse 670" transform="translate(-13522.5 6994)" fill="none" stroke="var(--footer-icons)" stroke-width="1"><circle cx="16" cy="16" r="16" stroke="none"></circle><circle cx="16" cy="16" r="15.5" fill="none"></circle></g></g></g></svg></a></li><li class="social"><a href="https://linkedin.com/in/pouria-jahandideh-879040157"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><defs><clipPath id="clip-linkedin-social"><rect width="32" height="32"></rect></clipPath></defs><g id="linkedin-social" clip-path="url(#clip-linkedin-social)"><g id="Group_270" data-name="Group 270" transform="translate(-86.349 -633.073)"><path id="Path_375" data-name="Path 375" d="M115.789,633.073a2.324,2.324,0,0,1,1.682.676,2.194,2.194,0,0,1,.695,1.627V662.8a2.131,2.131,0,0,1-.695,1.609,2.314,2.314,0,0,1-1.646.659H88.69a2.307,2.307,0,0,1-1.646-.659,2.128,2.128,0,0,1-.695-1.609V635.376a2.19,2.19,0,0,1,.695-1.627,2.322,2.322,0,0,1,1.682-.676h27.063Zm-20.224,9.672a2.561,2.561,0,0,0,0-3.584,2.658,2.658,0,0,0-1.938-.712,2.724,2.724,0,0,0-1.957.712,2.371,2.371,0,0,0-.75,1.792,2.4,2.4,0,0,0,.731,1.792,2.605,2.605,0,0,0,1.9.713h.037A2.7,2.7,0,0,0,95.565,642.745ZM96,645.434H91.213V659.88H96Zm17.3,6.144a7.007,7.007,0,0,0-1.573-4.9,5.68,5.68,0,0,0-6.839-.769,5.663,5.663,0,0,0-1.426,1.573v-2.048H98.674q.036.841,0,7.717v6.728h4.791V651.8a3.592,3.592,0,0,1,.146-1.17,2.913,2.913,0,0,1,.878-1.206,2.429,2.429,0,0,1,1.609-.549,2.108,2.108,0,0,1,1.865.914,4.265,4.265,0,0,1,.549,2.341v7.752H113.3Z" fill="var(--footer-icons)"></path></g></g></svg></a></li><li class="social"></li></ul></footer></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"attributes":{"title":"Patterns Implementation","description":"Patterns Implementation"},"html":"\u003ch3 id=\"1-singleton-pattern\"\u003e1. Singleton Pattern:\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003eclass Singleton:\n    _instance = None\n\n    def __new__(cls):\n        if not cls._instance:\n            cls._instance = super(Singleton, cls).__new__(cls)\n        return cls._instance\n\n# Usage\nsingleton_instance_1 = Singleton()\nsingleton_instance_2 = Singleton()\n\nprint(singleton_instance_1 is singleton_instance_2)  # Output: True (Both variables reference the same instance)\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"2-factory-method-pattern\"\u003e2. Factory Method Pattern:\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003efrom abc import ABC, abstractmethod\n\nclass Animal(ABC):\n    @abstractmethod\n    def sound(self):\n        pass\n\nclass Dog(Animal):\n    def sound(self):\n        return \u0026quot;Woof\u0026quot;\n\nclass Cat(Animal):\n    def sound(self):\n        return \u0026quot;Meow\u0026quot;\n\nclass AnimalFactory:\n    def create_animal(self, animal_type):\n        if animal_type == \u0026#39;dog\u0026#39;:\n            return Dog()\n        elif animal_type == \u0026#39;cat\u0026#39;:\n            return Cat()\n        else:\n            raise ValueError(\u0026quot;Invalid animal type\u0026quot;)\n\n# Usage\nfactory = AnimalFactory()\ndog = factory.create_animal(\u0026#39;dog\u0026#39;)\ncat = factory.create_animal(\u0026#39;cat\u0026#39;)\n\nprint(dog.sound())  # Output: Woof\nprint(cat.sound())  # Output: Meow\n\u003c/code\u003e\u003c/pre\u003e\n\u003ch3 id=\"3-observer-pattern\"\u003e3. Observer Pattern:\u003c/h3\u003e\n\u003cpre\u003e\u003ccode class=\"language-python\"\u003eclass Subject:\n    def __init__(self):\n        self._observers = []\n\n    def attach(self, observer):\n        self._observers.append(observer)\n\n    def detach(self, observer):\n        self._observers.remove(observer)\n\n    def notify(self, value):\n        for observer in self._observers:\n            observer.update(value)\n\nclass Observer:\n    def update(self, value):\n        print(f\u0026quot;Received value: {value}\u0026quot;)\n\n# Usage\nsubject = Subject()\nobserver1 = Observer()\nobserver2 = Observer()\n\nsubject.attach(observer1)\nsubject.attach(observer2)\n\nsubject.notify(\u0026quot;Hello Observers!\u0026quot;)\n\u003c/code\u003e\u003c/pre\u003e\n\u003cp\u003eThese examples provide a basic understanding and implementation of some design patterns in Python. The implementations may vary based on specific requirements and contexts. Additionally, Python\u0026#39;s dynamic nature allows for different ways to implement these patterns based on the problem at hand.\u003c/p\u003e\n","markdown":"\n### 1. Singleton Pattern:\n\n```python\nclass Singleton:\n    _instance = None\n\n    def __new__(cls):\n        if not cls._instance:\n            cls._instance = super(Singleton, cls).__new__(cls)\n        return cls._instance\n\n# Usage\nsingleton_instance_1 = Singleton()\nsingleton_instance_2 = Singleton()\n\nprint(singleton_instance_1 is singleton_instance_2)  # Output: True (Both variables reference the same instance)\n```\n\n### 2. Factory Method Pattern:\n\n```python\nfrom abc import ABC, abstractmethod\n\nclass Animal(ABC):\n    @abstractmethod\n    def sound(self):\n        pass\n\nclass Dog(Animal):\n    def sound(self):\n        return \"Woof\"\n\nclass Cat(Animal):\n    def sound(self):\n        return \"Meow\"\n\nclass AnimalFactory:\n    def create_animal(self, animal_type):\n        if animal_type == 'dog':\n            return Dog()\n        elif animal_type == 'cat':\n            return Cat()\n        else:\n            raise ValueError(\"Invalid animal type\")\n\n# Usage\nfactory = AnimalFactory()\ndog = factory.create_animal('dog')\ncat = factory.create_animal('cat')\n\nprint(dog.sound())  # Output: Woof\nprint(cat.sound())  # Output: Meow\n```\n\n### 3. Observer Pattern:\n\n```python\nclass Subject:\n    def __init__(self):\n        self._observers = []\n\n    def attach(self, observer):\n        self._observers.append(observer)\n\n    def detach(self, observer):\n        self._observers.remove(observer)\n\n    def notify(self, value):\n        for observer in self._observers:\n            observer.update(value)\n\nclass Observer:\n    def update(self, value):\n        print(f\"Received value: {value}\")\n\n# Usage\nsubject = Subject()\nobserver1 = Observer()\nobserver2 = Observer()\n\nsubject.attach(observer1)\nsubject.attach(observer2)\n\nsubject.notify(\"Hello Observers!\")\n```\n\nThese examples provide a basic understanding and implementation of some design patterns in Python. The implementations may vary based on specific requirements and contexts. Additionally, Python's dynamic nature allows for different ways to implement these patterns based on the problem at hand.","slug":"Patterns-Implementation","title":"Patterns Implementation","section":"Patterns","icon":"dumpster-fire","filePath":"/home/runner/work/advanced-python/advanced-python/lessons/02-Patterns/02-Patterns-Implementation.md","nextSlug":"/advanced-python/lessons/AsyncIO/Introduction","prevSlug":"/advanced-python/lessons/Patterns/Patterns-Introduction"}},"__N_SSG":true},"page":"/lessons/[section]/[slug]","query":{"section":"Patterns","slug":"Patterns-Implementation"},"buildId":"IaFelCunvDjZfaNDKtCIl","assetPrefix":"/advanced-python","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
