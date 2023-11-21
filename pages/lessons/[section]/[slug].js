@@ -5,6 +5,7 @@ import getCourseConfig from "../../../data/course";
 import Corner from "../../../components/corner";
 import { Context } from "../../../context/headerContext";
 
+
 export default function LessonSlug({ post }) {
   const courseInfo = getCourseConfig();
   const [_, setHeader] = useContext(Context);
