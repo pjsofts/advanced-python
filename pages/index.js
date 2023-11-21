@@ -52,7 +52,7 @@ export default function Lessons({ sections }) {
         </div>
         {courseInfo.frontendMastersLink ? (
           <a href={courseInfo.frontendMastersLink} className="cta-btn">
-            Watch on Frontend Masters
+            Join in Laitec
           </a>
         ) : null}
         <div className="main-card">

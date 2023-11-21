@@ -14,7 +14,7 @@ export default function Header(props) {
       <div className="navbar-info">
         {frontendMastersLink ? (
           <a href={frontendMastersLink} className="cta-btn">
-            Watch on Frontend Masters
+            Register in Laitec
           </a>
         ) : null}
         {section ? (

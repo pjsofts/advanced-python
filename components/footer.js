@@ -7,13 +7,13 @@ export default function Footer({ twitter, linkedin, github }) {
   return (
     <footer className="footer">
       <ul className="socials">
-        {twitter ? (
+        {/* {twitter ? (
           <li className="social">
             <a href={`https://twitter.com/${twitter}`}>
               <Tw />
             </a>
           </li>
-        ) : null}
+        ) : null} */}
         {github ? (
           <li className="social">
             <a href={`https://github.com/${github}`}>
@@ -29,14 +29,7 @@ export default function Footer({ twitter, linkedin, github }) {
           </li>
         ) : null}
         <li className="social">
-          <div className="terms">
-            <p>Content Licensed Under CC-BY-NC-4.0</p>
-            <p>Code Samples and Excercises Licensed Under Apache 2.0</p>
-            <p>
-              Site Designed by{" "}
-              <a href="https://www.alexdanielson.com/">Alex Danielson</a>
-            </p>
-          </div>
+          
         </li>
       </ul>
     </footer>
